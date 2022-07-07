@@ -20,8 +20,17 @@ height : 100%;
       width: -webkit-fit-content;
       width: -moz-fit-content;
       border-radius:10px;
-      box-shadow: 10px 10px 5px #888888;
+      box-shadow: 10px 10px 5px black;
       background-color:#d9a04c;
+      }
+    .borderA {
+      border:3px solid blue;
+      width: fit-content; 
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      border-radius:10px;
+      box-shadow: 10px 10px 5px black;
+      background-color:lime;
       }
     .button {
       background-color:#a9492b;
@@ -32,11 +41,12 @@ height : 100%;
   </style>
   <body style="
   margin: 0;
+  background-color:orange
   "
   >
 	  <div style="
       display:block;
-      background-color: #ff9800;
+      background-color: orange;
       text-align: center; 
       line-height: 1.2
       "
@@ -52,6 +62,7 @@ height : 100%;
       <div style="background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs2.51cto.com%2Foss%2F202101%2F03%2F9fdd191de781772e0fee58a0520765db.jpeg&refer=http%3A%2F%2Fs2.51cto.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659757365&t=267628b90d8be3abbb28237f5de0ecdc);
   background-size: 100% 100%;
   background-repeat: no-repeat;height: 100%;">
+      <br>
       <div style="
       display:flex;
       flex-warp:warp;
@@ -62,8 +73,8 @@ height : 100%;
       class="border"
       >
         <h1>静态服务</h1>
-        <a href="./pages/os"><button><h6>OrOS</h6></button></a>
-        <a href="./pages/code"><button><h6>开源项目</h6></button></a>
+        <a href="./pages/os"><button button class="button"><h6>OrOS</h6></button></a>
+        <a href="./pages/code"><button button class="button"><h6>开源项目</h6></button></a>
       </div>
       <div class="border">
         <h1>静态公告</h1>
@@ -71,13 +82,54 @@ height : 100%;
         <p>(2022.7.1发布)</p>
       </div>
     </div>
+    <br>
+    <hr>
+    <br>
+    <div  style="
+    display:flex;
+    flex-warp:warp;
+    gap:24px;
+    "
+    >
+      <div class="borderA">
+        <h1>用户列表</h1>
+        <h3>暂未开放</h3>
+      </div>
+      <div class="borderA">
+        <h1>橙软社区</h1>
+        <h3>暂未开放</h3>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div  style="
+    display:flex;
+    flex-warp:warp;
+    gap:24px;
+    "
+    >
+      <div class="borderA">
+        <h1>账户信息</h1>
+        <h3>暂未开放</h3>
+      </div>
+      <div class="borderA">
+        <h1>账户等级</h1>
+        <h3>暂未开放</h3>
+      </div>
+    </div>
     <div style="
       text-align: center;
       "
       >
+      <br>
       <hr>
       <h4>我是有底线的</h4>
       <h6>当前版本:b0.5(最后一次编辑:2022.7.6)</h6>
+      <p>后端服务由bomb提供支持</p>
+      <p>前端服务由<a href="midorg.com">元岛社区</a>提供帮助</a>
+      <br>
+      <p>.Orangesoft.</p>
     </div>
     </div>
   </body>
