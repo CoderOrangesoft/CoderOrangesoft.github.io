@@ -32,6 +32,15 @@ height : 100%;
       box-shadow: 10px 10px 5px black;
       background-color:lime;
       }
+      .borderB {
+      border:3px solid blue;
+      width: fit-content; 
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      border-radius:10px;
+      box-shadow: 10px 10px 5px black;
+      background-color:skyblue;
+      }
     .button {
       background-color:#a9492b;
       border:none;
@@ -52,7 +61,7 @@ height : 100%;
       "
     >
       <h1>橙软网</h1>
-      <p>媒体查询与动态功能即将部署！
+      <p>动态功能即将部署！
       <br>
       <a href="./login"><button class="button" style='height:40px;margin-top:20px;margin-right:20px'>登录到橙软网</button></a>
       <a href="./register"><button class="button"style='height:40px;margin-top:20px;margin-left:20px'>注册到橙软网</button></a>
@@ -109,12 +118,17 @@ height : 100%;
     gap:24px;
     "
     >
-      <div class="borderA">
+      <div class="borderB">
         <h1>账户信息</h1>
         <h3>暂未开放</h3>
       </div>
-      <div class="borderA">
+      <div class="borderB">
         <h1>账户等级</h1>
+        <h3>您当前userLevel级</h3>
+        <h3>(userExp - PastLevelExp),'/',userLevelExp</h3>
+      </div>
+      <div class="borderB">
+        <h1>友情链接</h1>
         <h3>暂未开放</h3>
       </div>
     </div>
@@ -125,7 +139,7 @@ height : 100%;
       <br>
       <hr>
       <h4>我是有底线的</h4>
-      <h6>当前版本:b0.5(最后一次编辑:2022.7.6)</h6>
+      <h6>当前版本:b0.6(最后一次编辑:2022.7.7)</h6>
       <p>后端服务由bomb提供支持</p>
       <p>前端服务由<a href="midorg.com">元岛社区</a>提供帮助</a>
       <br>
