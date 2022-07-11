@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>橙软的网站</title>
+  </head>
+  <body style="margin: 0;">
+	  <div style="
+      background-color: #f1f1f4;
+      text-align: center; 
+      line-height: 4.0
+      "
+    >
+      <img alt='图片' src='https://img2.baidu.com/it/u=4010038229,1159235590&fm=253&fmt=auto&app=138&f=JPEG?w=704&h=500' width="30px" height='px'
+      <p>你正在访问https://coderorangesoft.github.io/Orangesoft.github.io/！</p>
+      
+    </div>
+    <div style="
+      text-align: center;
+      background-image:url(背景);
+      border-top:1px solid #000;
+      border-bottom:1px solid #000;
+    >
+      <form onsubmit="return baiduWithHttps(this)" action="http://www.baidu.com/baidu" target="_blank">
+    <input name="tn" type="hidden" value="SE_zzsearchcode_shhzc78w">
+    <a href="https://www.baidu.com/" target="_blank">
+    </a>
+    <input type="text"  onfocus="checkHttps" name="word"  size="30">
+    <input type="submit"value="百度一下">
+</form>
+<script src="http://s1.bdstatic.com/r/www/cache/global/js/BaiduHttps_20150714_zhanzhang.js"></script>
+<script>
+    function checkHttps () {
+        BaiduHttps.useHttps();    
+    };
+    function baiduWithHttps (formname) {
+        var data = BaiduHttps.useHttps();
+        if (data.s === 0) {
+            return true;
+        }
+        else {
+            formname.action = 'https://www.baidu.com/baidu' + '?ssl_s=1&ssl_c' + data.ssl_code;
+            return true;
+        }
+    };
+</script>
+      <h3>网页大全</h3>
+      <h4>视频类</h4>
+      <a href = 'https://youtube.com'>点击浏览youtube视频</a>｜
+      <a href = 'https://bilibili.com'>点击浏览哔哩哔哩</a>｜
+      <a href = 'https://haokan.baidu.com'>点击浏览好看视频</a>｜
+      <a href = 'https://live.bilibili.com'>点击浏览哔哩直播</a>｜
+      <a href = 'https://kuaishou.com'>点击浏览快手视频</a>｜
+      <a href = 'https://douyin.com'>点击浏览抖音视频</a>｜
+      <a href = 'https://tiktok.com'>点击浏览tiktok视频</a>｜
+      <a href = 'http://acfun.cn'>点击浏览acfun视频</a>
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <h4>新闻类</h4>
+      <a href = 'http://paper.people.com.cn'>点击浏览人民日报</a>｜
+      <a href = 'http://news.qq.com'>点击浏览腾讯新闻</a>｜
+      <a href = 'http://sina.com.cn'>点击浏览新浪新闻</a>｜
+      <a href = 'http://tuijian.hao123.com'>点击浏览百度新闻</a>｜
+      <a href = 'http://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E6%96%B0%E9%97%BB&oq=%25E9%2598%25BF%25E9%2587%258C%25E6%2596%25B0%25E9%2597%25BB&rsv_pq=fb917af80001d52f&rsv_t=e934st%2Fib2g83loustmCITGhyg2QwFJohvQe3VU25AmVGgV9Vku5n6l7k%2BY&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=3&rsv_sug1=3&rsv_sug7=100&rsv_sug2=0&rsv_btype=t&inputT=1424&rsv_sug4=3888'>更多...</a>
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <h4>天气类</h4>
+      <a href = 'http://tianqi.com'>点击浏览天气</a>
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <h4>娱乐类</h4>
+      <a href = 'http://4399.com'>[推荐]4399</a>｜
+      <a href = 'http://7k7k.com'>[推荐]7k7k</a>｜
+      <a href = 'http://mc.163.com'>[近期热门]我的世界官网</a>｜
+      <a href = 'http://minecraft.net'>[近期热门]Minecraft Home Page</a>
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <h4>知识类</h4>
+      <a href = 'http://baike.baidu.com'>点击浏览百度百科</a>｜
+      <a href = 'http://xueshu.baidu.com'>点击浏览百度学术</a>｜
+      <a href = 'http://jingyan.baidu.com'>点击浏览百度经验</a>｜
+      <a href = 'http://scholar.google.com'>点击浏览google学术</a>
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <h4>技术类</h4>
+      <h6>技术员</h6>
+      <a href = 'http://csdn.net'>点击浏览CSDN</a>
+      <h6>少儿</h6>
+      <a href = 'http://hetao101.com'>点击浏览核桃编程</a>｜
+      <a href = 'http://shequ.codemao.cn'>点击浏览编程猫社区</a>｜
+      <a href = 'http://box3.codemao.cn'>点击浏览编程岛</a>｜
+      <a href = 'http://box.codemao.cn'>点击浏览编程岛(旧版)</a>
+    </div>
+    <div style="
+      background-color: #f1f1f4;
+      text-align: center
+      "
+    >
+      <p>Copyright©2022 Orangesoft</p>
+      <p>浏览完网站了,你还可以：</p>
+      <a href='https://www.baidu.com/s?ie=UTF-8&wd=Orangesoft'> 搜一搜橙软是什么！</a>｜
+      <a href='https://kitten4.codemao.cn'>试一试搭积木编程!</a>｜
+      <a href='https://www.bilibili.com/video/BV1uT4y1P7CX?from=search&seid=5671762287720618005&spm_id_from=333.337.0.0'>看114514个广告后免费获取Minecraft</a>
+      <p>网站备案号:BI1145141919810
+    </div>
+	  <div style="
+      
+      "
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+      <p>网站更新日志</p>
+      <p>v0.17 优化页面
+      <p>v0.16 更新404页面
+      <p>v0.15 优化github选项
+      <p>v0.14 优化页面以避免不必要的漏洞
+      <p>v0.13 将百度搜索框更新至最新版以避免不必要的漏洞
+      <p>v0.12 删除百度搜索框的图片以避免不必要的漏洞
+      <p>v0.11 将搜索框改为百度内核以避免不必要的漏洞
+      <p>v0.10 ‘技术类’专栏里新增子栏
+      <p>v0.9 修复了移动端浏览器的显示问题
+      <p>v0.8 更换网站底层运行逻辑以避免不必要的漏洞
+      <p>v0.7 更换分割线内核以兼容IE浏览器和旧版MicrosoftEdge
+      <p>v0.6 更新了分割线
+      <p>v0.5 修复了部分用户的图片显示
+      <p>v0.4 修复了CSDN跳转错误 
+      <p>v0.3 更新了搜索框
+      <p>v0.2 使用div以使界面更丰富
+      <p>v0.1 增加‘技术类’与‘娱乐类’
+      <p>v0.0 建立网站，增加分区,版权以及友情链接
+      <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width=80% color=#871F78 SIZE=1>
+    </div>
+    <div style="
+      text-align: center
+      "
+      >
+      <p>我是有底线的
+    <div/>
+  </body>
+</html>
+ 
