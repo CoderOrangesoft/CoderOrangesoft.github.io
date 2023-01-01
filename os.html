@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orangesoft的个人博客</title>
+    <style>  
+      body {
+        margin: 10;
+      }
+    </style>
+  </head>
+  <script src="https://coderorangesoft.github.io/js/forAll.js"></script>
+  <style>
+    header-top-left{
+      display:flex;
+      background-color:orange;
+      font-family:mojangles;
+      font-weight:lighter;
+      border-radius:10px 10px 0px 0px;
+      opacity:0.7
+    }
+    #time{
+      border-radius:0px 0px 10px 10px;
+    }
+    html{
+      background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
+    }
+    aeroBox{
+      display:block;
+      border-radius:10px;
+      background-color:white;
+      opacity:0.7;
+      font-weight:lighter;
+      line-height:1.5;
+    }
+    a{
+      text-decoration:none;
+      color:blue;
+    }
+    grey{
+      color:grey;
+    }
+    button{
+      border:none;
+      background-color:lightblue;
+      height:50px;
+      width:100px;
+      border-radius:50px;
+      font-weight:lighter;
+    }
+  </style>
+  <script>
+    document.onselect=function(){return true}
+    function randomLetter(count){
+      str="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+	    arr=str.split(",");rand="";
+      for(let i = 0;i<count;i++){
+        rand+=arr[Math.floor(Math.random()*26)];
+      }
+      return rand.toUpperCase();
+    }
+    function get()
+    {
+      let firstNumber = Math.floor(Math.random()*6);
+      let secondNumber = 6 - firstNumber;
+      let thirdNumber = Math.floor(Math.random()*7);
+      let fourthNumber = 7 - thirdNumber;
+      let number = "&nbsp激活码: " + firstNumber + secondNumber + thirdNumber + fourthNumber + "/" + randomLetter(4) + "/" + "OROS/" + randomLetter(4);
+      document.getElementById("getNumber").innerHTML=(number);
+    }
+    function del()
+    {
+      document.getElementById("getNumber").innerHTML=("&nbsp激活码: 请点击下方按钮获取!");
+    }
+  </script>
+  <header>
+      <h2>
+        <header-top-left id="header-top-left-text">
+            &nbsp>>>&nbsp当前页面&nbsp<a href="./">Orangesoft的个人博客</a>&nbsp→&nbsp<a href="./other">其他功能</a>&nbsp→&nbsp橙软系统
+        </header-top-left>
+        <header-top-left id="time">
+            &nbsp>>>&nbsp时间加载错误,请检查您的网络连接。
+        </header-top-left>
+      </h2>
+  </header>
+  <body>
+    <aeroBox>
+      <h2>
+        &nbsp橙软系统
+      </h2>
+      <h3 id="getNumber">
+        &nbsp激活码: 请点击下方按钮获取!
+      </h3>
+      &nbsp
+      <button onclick="get()">
+        <big>
+          获取激活码
+        </big>
+      </button>
+      <button onclick="del()">
+        <big>
+          清空
+        </big>
+      </button>
+    </aeroBox>
+  </body>
+  <footer>
+    <h2>
+        <header-top-left id="header-top-left-text">
+            &nbsp>>>&nbspCopyright by Orangesoft.
+        </header-top-left>
+        <header-top-left id="time">
+            &nbsp>>>&nbsp<a href="https://github.com/CoderOrangesoft/CoderOrangesoft.github.io">Riview it on Github!</a>
+        </header-top-left>
+    </h2>
+  </footer>
+</html>
