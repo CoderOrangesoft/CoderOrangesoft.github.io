@@ -104,11 +104,10 @@ def attack():
         vs, hs = 0.8, 0.3
     angle_ball = opt.TANK.angle_to(opt.BALL.x,opt.BALL.y)
     if opt.TANK.cool_remain == 0:
-        if angle_door < 355 and angle_door > 6:
-            if angle_ball > 0 and angle_ball < 4:
-                opt.TANK.do_fire()
-            if angle_ball > 356 and angle_ball < 360:
-                opt.TANK.do_fire()
+        if angle_ball > 0 and angle_ball < 4:
+            opt.TANK.do_fire()
+        if angle_ball > 356 and angle_ball < 360:
+            opt.TANK.do_fire()
     
     # 当attack()被tank_update()调用时，每一帧都会执行以上策略，并返回vs,hs值
     return vs, hs
@@ -144,13 +143,11 @@ def defence():
             elif angle > 270 and angle <= 360:
                 vs, hs = 0.8, 0.3
     angle_ball = opt.TANK.angle_to(opt.BALL.x,opt.BALL.y)
-    angle_door = opt.TANK.angle_to(-50,0)
     if opt.TANK.cool_remain == 0:
-        if angle_door < 355 and angle_door > 6:
-            if angle_ball > 0 and angle_ball < 4:
-                opt.TANK.do_fire()
-            if angle_ball > 356 and angle_ball < 360:
-                opt.TANK.do_fire()
+        if angle_ball > 0 and angle_ball < 4:
+            opt.TANK.do_fire()
+        if angle_ball > 356 and angle_ball < 360:
+            opt.TANK.do_fire()
 
     # 当defence()被tank_update()调用时，每一帧都会执行以上策略，并返回vs,hs值
     return vs, hs
