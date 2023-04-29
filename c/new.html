@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>编程猫社区-更简洁的主页-页面嵌套</title>
+    </head>
+    <style>
+           /* 悬停添加箭头图标 */
+   .niceButtonbeta {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: orange;
+        border: none;
+        color: #ffff;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 18px;
+        width: 48%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align: middle;
+      }
+      .niceButtonbeta span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .niceButtonbeta span::after {
+        content: ">𝒃𝒆𝒕𝒂";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -10px;
+        transition: 0.5s;
+      }
+      .niceButtonbeta:hover span {
+        padding-right: 100px;
+      }
+      .niceButtonbeta:hover span::after {
+        opacity: 1;
+        right: 0;
+      }
+   /* 悬停添加箭头图标 */
+   .niceButton6 {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: orange;
+        border: none;
+        color: #ffff;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 18px;
+        width: 48%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align: middle;
+      }
+      .niceButton6 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .niceButton6 span::after {
+        content: ">";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .niceButton6:hover span {
+        padding-right: 30px;
+      }
+      .niceButton6:hover span::after {
+        opacity: 1;
+        right: 0;
+      }
+        /* 悬停添加箭头图标 */
+   
+   /* 悬停添加箭头图标 */
+   .niceButton5 {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: #f4511e;
+        border: none;
+        color: #ffff;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 18px;
+        width: 31%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align: middle;
+      }
+      .niceButton5 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .niceButton5 span::after {
+        content: ">";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .niceButton5:hover span {
+        padding-right: 30px;
+      }
+      .niceButton5:hover span::after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+    <body>
+        <h1 style="font-weight:lighter"><img src="https://cdn-community.codemao.cn/community_frontend/asset/img_level_d380a.png" style = "transform:translate(0px,5px)"/>&nbsp创作工具列表</h1>
+        <a href = "https://kitten4.codemao.cn"><button class="niceButton5"><span>Kitten4.0</span></button></a>
+        <a href = "https://kitten.codemao.cn"><button class="niceButton5"><span>Kitten3.0</span></button></a>
+        <a href = "https://old-kitten.codemao.cn"><button class="niceButton5"><span>Kitten2.0</span></button></a>
+        <br />
+        <a href = "https://box3.codemao.cn"><button class="niceButton6"><span>Box 3.0</span></button></a>
+        <a href = "https://box.codemao.cn"><button class="niceButton6"><span>Box 2.0</span></button></a>
+        <br />
+        <a href = "https://wood.codemao.cn"><button class="niceButton6" style="background-color:skyblue;width:31%"><span>Wood Editor</span></button></a>
+        <a href = "https://wood2.codemao.cn"><button class="niceButton6" style="background-color:skyblue;width:26%"><span>Wood PE</span></button></a>
+        <a href = "https://turtle.codemao.cn"><button class="niceButton6" style="background-color:skyblue;width:37%"><span>Turtle Editor</span></button></a>
+        <br />
+        <a href = "https://coco.codemao.cn"><button class="niceButton6" style="background-color:lightgreen"><span>Coco</span></button></a>
+        <a href = "https://waddle.coco-central.cn/"><button class="niceButtonbeta" style="background-color:lightgreen"><span>Waddle</span></button></a>
+        <br />
+        <a href = "https://rocket-viewer.codemao.cn/"><button class="niceButton6" style="background-color:brown;width:98%"><span>Roki</span></button></a>
+
+        <h1 style="font-weight:lighter"><img src="https://cdn-community.codemao.cn/community_frontend/asset/jifen_df663.png" style = "transform:scale(1.3)"/>&nbsp 编程猫开发者工具/资料</h1>
+        <a href = "https://api.docs.codemao.work/""><button class="niceButton6" style="background-color:PURPLe;width:98%"><span>CODEMAO API DOCS</span></button></a>
+<br />
+        <a href = "https://github.com/codemaoTeam"><button class="niceButton6" style="background-color:PURPLE;width:98%"><span>CODEMAO TEAM</span></button></a>
+<br />
+        <a href = "https://box3.gitee.io/blockly/"><button class="niceButton6" style="background-color:PURPLE;width:98%"><span>BOX3 BLOCKLY</span></button></a>
+
+    </body>
+</html>
