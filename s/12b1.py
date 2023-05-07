@@ -2,7 +2,7 @@ import opt
 import random
 
 #在这里输入密码
-password = "liaoyongan"
+password = ""
 
 #0为防守，1为攻击，2为随机
 #这里已经调好配置了 对战大力出奇迹4:1 十分好用
