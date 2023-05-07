@@ -2,7 +2,7 @@ import opt
 import random
 
 #在这里输入密码
-password = ""
+password = "liaoyongan"
 
 #0为防守，1为攻击，2为随机
 #这里已经调好配置了 对战大力出奇迹4:1 十分好用
@@ -115,7 +115,7 @@ def tank5_update():
     elif TANK5 == 0:
         return defence()
     elif TANK5 == 3:
-        if (password)
+        if (password):
             return doorKeeper()
     else:
         if r5 == 1:
