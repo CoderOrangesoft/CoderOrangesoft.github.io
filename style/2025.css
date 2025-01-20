@@ -8,7 +8,8 @@
 
 .article_box,
 .info_box,
-.page_selector {
+.page_selector,
+.share_box {
     background-color: white;
     padding: 20px;
     margin: 20px;
