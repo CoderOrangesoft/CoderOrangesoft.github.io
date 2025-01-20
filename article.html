@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="script/m-share.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -20,23 +21,17 @@
     </div>
     <div class="article_box">
     </div>
+    <div class="share_box">
+        <h2>分享这篇文章......</h2>
+        <div class="m-share"></div>
+        <br />
+    </div>
 </body>
 
+<script src="script/2025article.js"></script>
 <script>
-    let articleId = new URLSearchParams(window.location.search).get('id');
-    console.log(articleId);
-    if (articleId === null) {
-        articleId = 0
-    }
-    if (isNaN(articleId) || articleId <= 0) {
-        let article = document.getElementsByClassName('article_box')[0];
-        let article_html = `
-            编号为 ${articleId} 的文章不存在或已删除。
-        `;
-        article.innerHTML += article_html;
-    } else {
-        start_article(articleId);
-    }
+    start_article_page()
 </script>
+
 
 </html>
