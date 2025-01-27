@@ -1,0 +1,158 @@
+
+
+<html>
+    <head>
+        <title>寒假作业日志</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            h1 {
+                background-color: #333;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                margin: 0;
+            }
+            .container {
+                width: 80%;
+                margin: 30px auto;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .log-entry {
+                background-color: #f9f9f9;
+                border-left: 5px solid #4CAF50;
+                padding: 10px;
+                margin: 5px 0;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            .log-entry:nth-child(odd) {
+                background-color: #f1f1f1;
+            }
+            .log-entry span {
+                font-weight: bold;
+                color: #555;
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+            .log-number {
+                color: #888;
+                font-size: 12px;
+                margin-right: 10px;
+            }
+            .footer {
+                text-align: center;
+                font-size: 12px;
+                color: #aaa;
+                margin-top: 20px;
+            }
+            /* 响应式设计 - 针对小屏幕设备 */
+            @media (max-width: 1368px) {
+                .container {
+                    width: 95%;
+                    padding: 15px;
+                }
+                .log-entry {
+                    font-size: 24px;
+                }
+                .log-number {
+                    font-size: 30px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>寒假作业日志</h1>
+        <div class="container">
+        
+            
+            
+        </div>
+        <div class="container">
+            <div class="log-entry">
+                <button id="show_more">显示更多</button>
+            </div> 
+        </div>
+ 
+        <div class="footer">
+            <p>This website is using&nbsp<a href="https://mit-license.org/">MIT LICENSE</a>&nbsp.</p>
+        </div>
+    </body>
+
+    <script>
+
+var host = 'https://zuoyerizhi.pythonanywhere.com';
+let container = document.getElementsByClassName("container")[0];
+let show_more_button = document.getElementById("show_more");
+
+let start_num = 1;
+let end_num = 10;
+let is_end = false;  // 假设是数据是否已经加载完的标记
+let show_list = [];
+
+function load_data() {
+    let first_load = fetch(host + `/data/get?s=${start_num}&e=${end_num}`);
+    first_load.then(
+        (res) => {
+            res.json().then(data => {
+                console.log("Fetched data:", data);  // 查看获取到的数据
+                is_end = data['is_end'];
+                show_list = data['show_list'];
+
+                // 拼接 HTML 内容
+                let list_html = '';
+                for (let list_content = 0; list_content < 10; list_content++) {
+                    if (show_list[list_content] !== undefined) {
+                        list_html += `
+                            <div class="log-entry">
+                                <span class="log-number"> ${show_list[list_content]} </span>
+                            </div>
+                        `;
+                    }
+                }
+
+                // 一次性更新容器
+                container.innerHTML += list_html;
+                // console.log('Updated HTML:', list_html);  // 检查拼接后的 HTML
+
+                // 更新 start_num 和 end_num
+                start_num += 10;
+                end_num += 10;  // 每次加载10条数据
+
+                // 如果数据已加载完，隐藏“显示更多”按钮
+                if (is_end) {
+                    show_more_button.style.display = "none";
+                    document.getElementsByClassName('container')[1].style.display = "none"
+                }
+
+            }).catch(error => {
+                console.error("Error parsing JSON: ", error);
+            });
+        }
+    ).catch(error => {
+        console.error("Request error: ", error);
+    });
+}
+
+// 点击“显示更多”按钮时加载数据
+show_more_button.addEventListener('click', function() {
+    console.log("Loading more data...");
+    load_data();
+});
+
+// 初始化加载数据
+load_data();
+
+
+    </script>
+
+</html>
