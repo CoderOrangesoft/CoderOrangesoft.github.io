@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆碎片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        .header h2 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 3px;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+            height: auto; /* 高度自适应内容 */
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .memory-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .memory-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            word-break: break-word; /* 长单词自动换行 */
+        }
+
+        .memory-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .memory-desc {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+            word-break: break-word; /* 长单词自动换行 */
+            white-space: pre-line; /* 保留换行符 */
+        }
+
+        /* 不同记忆卡片的不同颜色主题 */
+        .memory-card:nth-child(6n+1) {
+            border-top: 4px solid #ff9a9e;
+        }
+        .memory-card:nth-child(6n+2) {
+            border-top: 4px solid #fad0c4;
+        }
+        .memory-card:nth-child(6n+3) {
+            border-top: 4px solid #a18cd1;
+        }
+        .memory-card:nth-child(6n+4) {
+            border-top: 4px solid #fbc2eb;
+        }
+        .memory-card:nth-child(6n+5) {
+            border-top: 4px solid #84fab0;
+        }
+        .memory-card:nth-child(6n+6) {
+            border-top: 4px solid #8fd3f4;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .memories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
+            }
+            
+            .header h2 {
+                font-size: 2rem;
+            }
+            
+            .memory-title {
+                font-size: 1.3rem;
+            }
+            
+            .memory-desc {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .memories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .memory-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>记忆碎片</h2>
+    </div>
+    
+    <div class="memories-grid" id="memoriesContainer">
+        <!-- 卡片将通过JavaScript动态生成 -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 正能量emoji列表
+            const emojis = ['😊', '🌟', '🎉', '❤️', '🌈', '✨', '🌸', '🎈', '🦋', '🍀', '🌞', '🎁', '🍭', '🦄', '🐬', '🌻', '🎨', '🎵', '🏆', '🧩'];
+            
+            // 时间列表
+            const times = [
+                '2022.9.5',
+                '2022.10 - 2022.11',
+                '2023.2',
+                '2023.3',
+                '2023.4',
+                '2023.5',
+                '2023.5',
+                '2023.5-2023.6(?)',
+                '2023.6',
+                '2023.6',
+                '2023.6',
+                '2023.7',
+                '2023.8',
+                '2023.9',
+                '2023.10',
+                '2023.11',
+                '2023.12-2024.1',
+                '2024.2',
+                '2024.3-6',
+                '2024.6.24(? 25)',
+                '2024.7',
+                '2024.9',
+                '2024.11.26',
+                '2024.10 - 2024.11',
+                '2024.12',
+                '2024.12-2025.1',
+                '2025.2',
+                '2025.3',
+                '2025.4',
+                '2025.4',
+                '2025.4',
+                '2025.5',
+                '2025.5',
+                '2025.5',
+                '2025.5.29',
+                '2025.5.30',
+                '2025.6'
+            ];
+            
+            const titles = [
+                '七年级',
+                '合唱比赛',
+                '七下开学',
+                '一个黄昏的场景',
+                '新的分组',
+                '进入常态化',
+                '劳动课',
+                '六一文艺汇演',
+                '六一班上活动',
+                '搬教室',
+                '组内互助',
+                '考试+放假',
+                '(?)',
+                '步入八年级',
+                '黯淡',
+                '重新照亮',
+                '失落之冬',
+                '重启,更新',
+                '新征程',
+                '再换教室',
+                '一段辉煌的逐渐落幕',
+                '九年级开学',
+                '"谎言"',
+                '稳定',
+                '运动会',
+                '低谷',
+                '最后一学期',
+                '顶峰',
+                '常态中的破裂危机',
+                '破裂',
+                '恢复',
+                '确定',
+                '更进一步(从这里开始全部都记得很清楚)',
+                '恢复',
+                'c13',
+                '生日',
+                '6月'
+            ]
+
+            // 事件列表
+            const events = [
+                'I remember meeting you in Grade 7.',
+                '记得你在我前面',
+                '你在隔壁llg组，你坐在左后方',
+                '当时在加分，记得一直加到了很晚',
+                '期中考试以后新分了组，你要求一起选邓伊凝和你，后面没有全部选成。那天下午下的是小雨.',
+                '当时你要排练六一的演出，还有一部分人要搞阳光体育，然而我什么都没搞，于是我在教室自习+帮忙抄家校',
+                '别样的劳动课之烤鸡翅(吐了蜂蜜以后太难吃了),之后就是生物课将人体内的血液循环,朱老师说他也想吃',
+                '从客观上来说可以认为我看到你了🤔(当时我记得坐在体育馆2楼)',
+                '当时坐在第一组的中间,其实我不太记得发生的矛盾🤔,记得当时吃饱了',
+                '记忆缺失',
+                '我要给省里的领导展示作品,下午放学排练时你帮我抄了家校,留了纸条.次日由于展示我没有听到周报的讲解,组内互助还帮我做了笔记.',
+                '那次考试考的不错,然后就准备编程国赛去了.记得收到当时暑假作业上的一道题,你问我引力常数是什么',
+                '记忆缺失',
+                '第一周还是一起坐,在选组长的时候你站起来就当了组长',
+                '在创客班炫耀我的网络破坏技术,最后在私下里被肖老师说"要引导同学们正确行为"',
+                '期中考试大捷. 分组时你要进入我的组,但是最后没能选成.关系重现光芒.',
+                '记忆缺失',
+                '状态与关系逐渐恢复,感觉心里又有了希望',
+                '记得当时备战生地中考,我们两个组左右轮换了很久,我们也一起坐了很久很久',
+                '由于新教室第二大组合第三大组的间隔有点长,我们的距离被拉长了.进入新教室的第一个活动是一举夺"葵",你和我在比谁的向日葵举得更高.',
+                '八年级期末考试+仅存几天的补课',
+                '一次换位置,莫昊宇的闹腾让我们没有坐得很近.',
+                '是谎言',
+                '有段时间每天放学都一起回家',
+                '排球比赛你来看了我,但是你的跑步比赛我就没有太主动.跳绳等待时我在风雨球场右侧悠闲走动,你说我在"踱步",然后还回忆起了我八年级运动会时研究三角函数(感觉我那时候太蠢了)',
+                '那段时间确实很怅惘,但是在补课结束的前几天记得你坐我旁边更正东西.',
+                '前一个月都在因颓废而调整,非常迷茫',
+                '查一模成绩太过激动了,你发现我并不是"不以物喜,不以己悲",其实还真不是',
+                '一起探讨了托勒密定理,锥体体积公式(你用微积分方法教会了我,还问我会不会觉得太装了)',
+                '就在不久后就有隔阂了,当时很疑惑,伤心了很久(但是现在知道原因了),在体育中考前一天出现了恢复迹象.',
+                '体考后关系又恢复了常态化.并且你有话要跟我说.',
+                '苏仙岭登山,那天说的话我还记得90%',
+                '在学习上"调整巩固充实提高",但是也面临了牢蒋等人的嘲讽',
+                '状态恢复的差不多了',
+                '超级爬虫',
+                '😊',
+                '时间不多了......'
+            ];
+            
+            const memoriesContainer = document.getElementById('memoriesContainer');
+            const cardCount = times.length; // 根据时间列表长度确定卡片数量
+            
+            // 生成卡片
+            for (let i = 0; i < cardCount; i++) {
+                // 随机选择emoji
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                // 创建卡片HTML
+                const cardHTML = `
+                    <div class="memory-card">
+                        <div class="memory-content">
+                            <div class="memory-title">${randomEmoji} ${titles[i]}</div>
+                            <div class="memory-date">${times[i]}</div>
+                            <div class="memory-desc">${events[i].replace(/\n/g, '<br>')}</div>
+                        </div>
+                    </div>
+                `;
+                
+                // 添加卡片到容器
+                memoriesContainer.innerHTML += cardHTML;
+            }
+        });
+    </script>
+</body>
+</html>
